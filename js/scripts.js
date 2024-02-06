@@ -6,7 +6,6 @@ $(document).ready(function () {
 	/* si la pantalla es mayor a móviles cargamos los scrollbar y googleMaps */
 	if(ancho > 768){
 		scrollBar();
-		inicializarMapa();
 	}
 
 	/* si la pantalla es mayor al tamaño más chico desktop cargamos el efecto parallax */
@@ -35,10 +34,7 @@ $(document).ready(function () {
   	/* determinados eventos al redimensionar pantalla */
 	$(window).resize(function() {
 		var ancho = $(window).width();
-		var alto = $(window).height();
-		if(ancho > 768){
-  		  inicializarMapa();
-		}	
+		var alto = $(window).height();	
 		if(ancho > 1025){
   		  parallax();
 		}			
@@ -57,36 +53,6 @@ $(document).ready(function () {
 	 		autoDraggerLength:false
 		});
 	}
-
-	/* seteamos googleMaps */
-  	// function inicializarMapa(){
-	// 	var newark = new google.maps.LatLng(-38.948,-71.116);
-	// 	var imageBounds = new google.maps.LatLngBounds(
-	// 	    new google.maps.LatLng(-39.087,-71.503),
-	// 	    new google.maps.LatLng(-38.705,-70.703));
-	// 	var myOptions = {
-	// 		zoom: 12,
-	// 		zoomControlOptions: {
-	// 				style: google.maps.ZoomControlStyle.LARGE,
-	// 				position: google.maps.ControlPosition.LEFT_CENTER
-	// 		},
-	// 			panControlOptions: {
-	// 				position: google.maps.ControlPosition.LEFT_CENTER
-	// 				},
-	// 			  center: newark,
-	// 		scrollwheel: false,
-	// 		mapTypeControl: false,
-	// 		mapTypeId: google.maps.MapTypeId.HYBRID 
-	// 	};
-	// 	var image = 'imagenes/logo_mapa.png';
-	// 	var map = new google.maps.Map(document.getElementById("mapa"), myOptions);
-	// 	var marker = new google.maps.Marker({
-	// 		position: newark, 
-	// 		map: map,
-	// 		icon: image,
-	// 		animation: google.maps.Animation.DROP
-	// 	});
-  	// }
 
 	$('#in, #out').click(function(){
 		$('#ui-datepicker-div').append('<p>Check In</p>');
