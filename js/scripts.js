@@ -37,7 +37,10 @@ $(document).ready(function () {
 		var alto = $(window).height();	
 		if(ancho > 1025){
   		  parallax();
-		}			
+		}
+		if(ancho > 768){
+			scrollBar();
+		}		
 	});  	
 
 	/* animamos anclas en el evento click de la botonera */
